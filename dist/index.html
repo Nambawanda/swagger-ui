@@ -41,6 +41,7 @@
       const ui = SwaggerUIBundle({
         url: "https://petstore.swagger.io/v2/swagger.json",
         dom_id: '#swagger-ui',
+        docExpansion: 'none',
         deepLinking: true,
         presets: [
           SwaggerUIBundle.presets.apis,
@@ -48,6 +49,10 @@
         ],
         plugins: [
           SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        urls: [
+          {name: "PROD",  url: "https://analytics.alloka.ru/api/v2/apidocs"},
+          {name: "STAGING",  url: "https://analytics.staging.alloka.ru/api/v2/apidocs"},
         ],
         layout: "StandaloneLayout"
       });
